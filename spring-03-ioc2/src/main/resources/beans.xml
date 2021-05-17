@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+   <!--  无参构造情况
+    <bean id="user" class="com.joker.pojo.User">
+        <property name="name" value="郭方杰"/>
+    </bean>-->
+
+  <!--  &lt;!&ndash;有参构造情况&ndash;&gt;
+    <bean id="user" class="com.joker.pojo.User">
+        <constructor-arg index="0" value="郭方杰"/>
+    </bean>
+-->
+<!--    通过类型创建，不建议使用
+    <bean id="user" class="com.joker.pojo.User">
+        <constructor-arg type = "java.lang.String" value="gfj"/>
+    </bean>-->
+
+    <!--
+    id : bean 的唯一标识符，也就相当于我们学的对象名
+    class : bean对象所所对应的全限定名：包名+类型
+    name : 也是别名，而且name可以同时取多个别名
+    -->
+
+    <!--<bean id="user" class="com.joker.pojo.User" name="user3,user4,u5">
+        <property name="name" value="西部开源"/>
+    </bean>-->
+
+    <bean id="user" class="com.joker.pojo.User">
+        <constructor-arg name = "name" value="郭方杰"/>
+    </bean>
+    <!--给id起别名,可以使用别名获取这个对象-->
+    <alias name="user" alias="user2"/>
+
+
+</beans>
